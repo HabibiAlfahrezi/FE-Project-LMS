@@ -1,8 +1,20 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import Dashboard from "./pages/Dashboard";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
 function App() {
 	return (
-		<Dashboard/>
+		<section className="bg-[#f8f8f9]">
+			<div className="flex gap-8">
+				<Sidebar />
+
+				<main className="w-full">
+					<Header />
+					<Outlet />
+				</main>
+				<Sidebar />
+			</div>
+		</section>
 	);
 }
 

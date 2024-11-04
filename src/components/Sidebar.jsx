@@ -8,9 +8,10 @@ import {
 import { CiSettings, CiLogout  } from "react-icons/ci";
 import logo from "../assets/logo.png";
 import friends from "../assets/friends.jpeg";
+import { NavLink } from "react-router-dom";
 const Sidebar = () => {
 	const menuItems = [
-		{ label: "Dashboard", href: "dashboard", icon: <FaTachometerAlt /> },
+		{ label: "Dashboard", href: "", icon: <FaTachometerAlt /> },
 		{ label: "Inbox", href: "inbox", icon: <FaEnvelope /> },
 		{ label: "Lesson", href: "lesson", icon: <FaBook /> },
 		{ label: "Task", href: "task", icon: <FaClipboardList /> },
@@ -18,7 +19,7 @@ const Sidebar = () => {
 	];
 
 	return (
-		<aside className="h-screen border border-black w-60 flex p-8">
+		<aside className="h-screen w-60 flex p-8 bg-white">
 			<div>
 				<img src={logo} alt="Logo" />
 				<div className="pt-12 pb-12 flex flex-col justify-between h-full">
@@ -28,7 +29,7 @@ const Sidebar = () => {
 							{menuItems.map((item, index) => (
 								<li key={index} className="flex items-center font-medium gap-4">
 									{item.icon}
-									<p to={item.href}>{item.label}</p>
+									<NavLink to={item.href}>{item.label}</NavLink>
 								</li>
 							))}
 						</ul>
